@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Excel Data Formatter</title>
+  <title>Yogs Tool</title>
 
   <!-- SweetAlert2 for beautiful alerts -->
   <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
@@ -123,22 +123,22 @@
     <h1>Make Excel Work Fun :)</h1>
 
     <div class="section">
-      <label for="rawText">Paste your data:</label>
+      <label for="rawText">Paste your data :</label>
       <textarea id="rawText" rows="6" placeholder="Enter values separated by space or newline..."></textarea>
     </div>
 
     <div class="section">
-      <label for="rows">Rows:</label>
+      <label for="rows">| Rows |</label>
       <input type="number" id="rows" placeholder="Required"/>
     </div>
 
     <div class="section">
-      <label for="cols">Columns:</label>
+      <label for="cols">---Columns---</label>
       <input type="number" id="cols" placeholder="Required"/>
     </div>
 
     <div class="btn-group">
-      <button onclick="displayTable()">Display Table</button>
+      <button onclick="displayTable()">Display</button>
       <button onclick="downloadExcel()">Download Excel</button>
       <button onclick="copyToClipboard()">Copy to Excel</button>
     </div>
@@ -231,7 +231,7 @@
       const workbook = XLSX.utils.book_new();
       XLSX.utils.book_append_sheet(workbook, worksheet, "Sheet1");
 
-      XLSX.writeFile(workbook, "formatted_data.xlsx");
+      XLSX.writeFile(workbook, "output.xlsx");
     }
 
     function copyToClipboard() {
